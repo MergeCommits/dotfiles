@@ -3,10 +3,10 @@
 installOrUpdateHomebrew() {
     which brew > /dev/null 2>&1
     if [ $? -eq 1 ]; then
-	    xcode-select --install
-	    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        xcode-select --install
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
-	    brew update
+        brew update
     fi
 }
 
