@@ -50,7 +50,7 @@ unmap `
 
 map , Marks.activate
 map < Marks.activateCreateMode
-map . Marks.clearLocal
+map > Marks.clearLocal
 
 # Scrolling
 unmap <c-e>
