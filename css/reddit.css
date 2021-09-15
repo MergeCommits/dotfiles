@@ -1,0 +1,9 @@
+/* Hide vote count */
+button[aria-label="upvote"] + div {
+	display: none;
+}
+
+/* Hide downvote button */
+button[aria-label="downvote"] {
+	display: none;
+}

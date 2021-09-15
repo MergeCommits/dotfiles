@@ -1,0 +1,20 @@
+/* Like to dislike ratio bar. */
+ytd-sentiment-bar-renderer#sentiment {
+    display: none;
+}
+
+/* Like/Dislike count text (hides all text from the bottom bar). */
+#top-level-buttons yt-formatted-string#text,
+#top-level-buttons-computed yt-formatted-string#text{
+    display: none;
+}
+
+/* Comments section. */
+#comments {
+    display: none;
+}
+
+/* Live chat. */
+#chat {
+	display: none;
+}
