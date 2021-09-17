@@ -1,9 +1,14 @@
-/* Hide vote count */
+/* Vote count */
 button[aria-label="upvote"] + div {
 	display: none;
 }
 
-/* Hide downvote button */
+/* Downvote button */
 button[aria-label="downvote"] {
+	display: none;
+}
+
+/* Comment count */
+a[data-click-id="comments"] span {
 	display: none;
 }
