@@ -14,7 +14,7 @@ g.s|gs|gscholar: https://scholar.google.com/scholar?q=$s \
 az|amazon: https://www.amazon.com/s/?field-keywords=%s \
   blank=https://www.amazon.com/ Amazon
 
-v.m|v\:math: vimium://math\ $S re= Calculate
+math: vimium://math\ $S re= Calculate
 gh|github: https://github.com/search?q=$s \
   blank=https://github.com/ GitHub Repo
 ge|gitee: https://search.gitee.com/?type=repository&q=$s \
