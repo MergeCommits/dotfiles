@@ -12,7 +12,6 @@ cask "1password"
 cask "cloudflare-warp"
 cask "istat-menus"
 cask "the-unarchiver"
-cask "spotify"
 
 # borpaBusiness Apps
 cask "google-chrome"
