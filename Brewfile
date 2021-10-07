@@ -6,19 +6,21 @@ tap "homebrew/bundle"
 brew "nvm"
 brew "node"
 brew "yarn"
+brew "firebase-cli"
 
 # Apps
 cask "1password"
 cask "cloudflare-warp"
 cask "istat-menus"
 cask "the-unarchiver"
+cask "ytmdesktop-youtube-music"
 
 # borpaBusiness Apps
 cask "google-chrome"
 cask "jetbrains-toolbox"
+cask "slack"
 
 # Mac App Store Apps
 brew "mas"
 
-# TODO: Add Cascadea, Slack
-# Slack # prefer mac app store updates over homebrew as this app isn't evergreen
+# TODO: Add Cascadea
