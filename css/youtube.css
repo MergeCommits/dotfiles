@@ -1,11 +1,41 @@
-/* Like to dislike ratio bar. */
-ytd-sentiment-bar-renderer#sentiment {
-    display: none;
+/* View count below main video. */
+ytd-video-view-count-renderer {
+    display: none !important;
+}
+.ytd-video-primary-info-renderer#dot {
+	display: none; /* Remove the now leading dot next to the date. */
 }
 
-/* Like/Dislike count text (hides all text from the bottom bar). */
-#top-level-buttons yt-formatted-string#text,
-#top-level-buttons-computed yt-formatted-string#text{
+/* View counts in related videos and on homepage. */
+#metadata-line.ytd-video-meta-block span.ytd-video-meta-block:first-of-type {
+    display: none !important;
+}
+
+/* View count on channel page. */
+#metadata-line.ytd-grid-video-renderer span.ytd-grid-video-renderer:first-of-type {
+	display: none;
+}
+
+/* Subscriber count below main video. */
+#owner-sub-count {
+	display: none;
+}
+#top-row.ytd-video-secondary-info-renderer {
+	margin-bottom: 0 !important; /* Remove a now awkward space between the channel name and description. */
+}
+
+/* Subscriber count on channel page. */
+#subscriber-count {
+	display: none;
+}
+
+/* Like/Dislike buttons and text. */
+ytd-toggle-button-renderer.force-icon-button a.ytd-toggle-button-renderer {
+	display: none !important;
+}
+
+/* Like/Dislike sentiment bar. */
+ytd-sentiment-bar-renderer#sentiment {
     display: none;
 }
 
