@@ -6,9 +6,12 @@ ytd-video-view-count-renderer {
 	display: none; /* Remove the now leading dot next to the date. */
 }
 
-/* View counts in related videos and on homepage. */
+/* View counts on homepage, in related videos and in history. */
 #metadata-line.ytd-video-meta-block span.ytd-video-meta-block:first-of-type {
     display: none !important;
+}
+ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-video-meta-block {
+	display: none !important; /* Remove the now trailing dot next to the channel name in history. */
 }
 
 /* View count on channel page. */
