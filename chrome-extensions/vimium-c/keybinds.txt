@@ -5,7 +5,7 @@ unmap r
 unmap h
 unmap R
 unmap <a-r>
-unmap <a-f>
+unmap <a-f>
 unmap zH
 unmap zL
 unmap d
@@ -21,8 +21,8 @@ unmap <f8>
 unmap gf
 unmap gF
 unmap gi
-unmap gu
-unmap gU
+unmap gu
+unmap gU
 
 # Vomnibar
 unmap gn
@@ -43,7 +43,8 @@ unmap g0
 unmap g$
 unmap <a-t>
 unmap yt
-unmap X
+unmap x
+unmap X
 unmap <a-p>
 unmap ^
 unmap H
@@ -83,10 +84,10 @@ unmap b
 
 ### Mapper
 
-# Manipulating tabs
+# Navigating the page
 map gg LinkHints.activateHover
-map gt goUp
-map gT goToRoot
+map gt goUp
+map gT goToRoot
 
 # Marks
 map , Marks.activate
