@@ -5,6 +5,7 @@ unmap r
 unmap h
 unmap R
 unmap <a-r>
+unmap <a-f>
 unmap zH
 unmap zL
 unmap d
@@ -17,6 +18,11 @@ unmap P
 unmap [[
 unmap ]]
 unmap <f8>
+unmap gf
+unmap gF
+unmap gi
+unmap gu
+unmap gU
 
 # Vomnibar
 unmap gn
@@ -46,11 +52,7 @@ unmap L
 unmap t
 
 # Marks
-unmap `
-
-map , Marks.activate
-map < Marks.activateCreateMode
-map > Marks.clearLocal
+unmap `
 
 # Scrolling
 unmap <c-e>
@@ -59,45 +61,56 @@ unmap k
 unmap gg
 unmap G
 
-map l scrollUp
-map u scrollToTop
-map h scrollToBottom
-
 # Tab Management
 unmap >>
 unmap <<
 
-map J moveTabLeft
-map L moveTabRight
-
 # Mute
 unmap <a-m>
 unmap m
-map m toggleMuteTab
 
 # Elements
 unmap <s-f1>
-
-map b switchFocus
-
-# Find
-unmap /
-
-map p enterFindMode
 
 # Edit current URL
 unmap ge
 unmap gE
 
+# Open bookmark
+unmap b
+
+
+
+### Mapper
+
+# Manipulating tabs
+map gg LinkHints.activateHover
+map gt goUp
+map gT goToRoot
+
+# Marks
+map , Marks.activate
+map < Marks.activateCreateMode
+map > Marks.clearLocal
+
+# Scrolling
+map l scrollUp
+map u scrollToTop
+map h scrollToBottom
+
+# Tab Management
+map J moveTabLeft
+map L moveTabRight
+
+# Mute
+map m toggleMuteTab
+
+# Edit current URL
 map e Vomnibar.activateUrl
 map E Vomnibar.activateUrlInNewTab
 
 # Open bookmark
-unmap b
 map b Vomnibar.activateBookmarks
-
-# Blur/refocus activeElement
-map k switchFocus
 
 # Visual Mode
 mapkey <d:v> j
