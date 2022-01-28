@@ -18,6 +18,7 @@ cask "ytmdesktop-youtube-music"
 # borpaBusiness Apps
 cask "google-chrome"
 cask "jetbrains-toolbox"
+cask "sourcetree"
 cask "slack"
 
 # Mac App Store Apps
