@@ -12,15 +12,6 @@ installOrUpdateHomebrew() {
     brew bundle
 }
 
-installOrUpdateOhMyZsh() {
-    OMZDIR="$HOME/.oh-my-zsh"
-    if [ ! -d "$OMZDIR" ]; then
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    else
-        upgrade_oh_my_zsh
-    fi
-}
-
 textEditSettings() {
     # Open TextEdit with Plain Text mode
     defaults write com.apple.TextEdit RichText -int 0
@@ -43,7 +34,6 @@ systemSettings() {
 
 main() {
     installOrUpdateHomebrew()
-    installOrUpdateOhMyZsh()
     textEditSettings()
     systemSettings()
 }
