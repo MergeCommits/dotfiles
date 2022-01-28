@@ -34,6 +34,11 @@ systemSettings() {
     
     # Use list view in all Finder windows by default
     defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+    
+    defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+    defaults write com.apple.finder AppleShowAllFiles -bool true
+    
+    killall Finder
 }
 
 main() {
