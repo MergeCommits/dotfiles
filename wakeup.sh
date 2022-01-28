@@ -3,7 +3,7 @@
 installOrUpdateHomebrew() {
     which brew > /dev/null 2>&1
     if [ $? -eq 1 ]; then
-        xcode-select --install # Assume XCode command line tools are not installed.
+        xcode-select --install # Assume Xcode command line tools are not installed.
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     else
         brew update
