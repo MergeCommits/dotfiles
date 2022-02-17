@@ -7,6 +7,7 @@ brew "nvm"
 brew "node"
 brew "yarn"
 brew "firebase-cli"
+brew "git"
 
 # Apps
 cask "1password"
@@ -24,4 +25,4 @@ cask "slack"
 # Mac App Store Apps
 brew "mas"
 
-# TODO: Add Cascadea
+mas "Cascadea", id: 1432182561

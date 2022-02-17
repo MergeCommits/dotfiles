@@ -1,10 +1,11 @@
 #!/bin/zsh
 
 installOrUpdateHomebrew() {
-    which brew > /dev/null 2>&1
-    if [ $? -eq 1 ]; then
-        xcode-select --install # Assume Xcode command line tools are not installed.
+    which -s brew
+    if [[ $? != 0 ]] ; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/markjarjour/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
     else
         brew update
     fi
@@ -20,22 +21,42 @@ textEditSettings() {
 }
 
 systemSettings() {
-    defaults write com.apple.screensaver askForPassword -int 1
-    defaults write com.apple.screensaver askForPasswordDelay -int 600
-    
-    # Use list view in all Finder windows by default
-    defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-    
     defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
     defaults write com.apple.finder AppleShowAllFiles -bool true
     
+    # When performing a search, search the current folder by default
+    defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+    # Disable the warning when changing a file extension
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+    # Use column view in all Finder windows by default
+    defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+    defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+    # Turn off the “Application Downloaded from Internet” quarantine warning:
+    defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+    # Disable automatic capitalization.
+    defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+    # Disable smart dashes.
+    defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+    # Disable automatic period substitution.
+    defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+    # Disable smart quotes.
+    defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
     killall Finder
 }
 
 main() {
-    installOrUpdateHomebrew()
-    textEditSettings()
-    systemSettings()
+    installOrUpdateHomebrew
+    textEditSettings
+    systemSettings
 }
 
-main()
+main

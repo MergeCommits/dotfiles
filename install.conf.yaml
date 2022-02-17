@@ -4,10 +4,6 @@
 
 - clean: ['~']
 
-- link:
-
-- create:
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [wakeup.sh]
+  - [zsh wakeup.sh]
