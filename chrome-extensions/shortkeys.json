@@ -1,0 +1,65 @@
+[
+  {
+    "action": "back",
+    "key": "ctrl+shift+alt+n",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+m",
+    "action": "forward",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+r",
+    "action": "reload",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+t",
+    "action": "reopentab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+j",
+    "action": "prevtab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "action": "nexttab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  },
+  {
+    "key": "ctrl+shift+alt+w",
+    "action": "closetab",
+    "sites": "",
+    "sitesArray": [
+      ""
+    ],
+    "activeInInputs": true
+  }
+]
