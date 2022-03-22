@@ -102,13 +102,6 @@ map h scrollToBottom
 # Tab Management
 map J moveTabLeft
 map L moveTabRight
-map <a-c-s-j> previousTab
-map <a-c-s-l> nextTab
-map <a-c-s-t> restoreTab
-map <a-c-s-n> goBack
-map <a-c-s-m> goForward
-map <a-c-s-r> reloadTab
-map <a-c-s-w> removeTab
 
 # Mute
 map m toggleMuteTab
