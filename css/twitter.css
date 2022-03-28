@@ -1,0 +1,11 @@
+# Hide trending bar.
+div[data-testid=sidebarColumn] {
+	display: none;
+}
+
+# Make main column take up max width.
+div[data-testid=primaryColumn] {
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+}
