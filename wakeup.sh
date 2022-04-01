@@ -51,6 +51,9 @@ systemSettings() {
     # Disable smart quotes.
     defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
+    # Disable auto-correct
+    defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
     killall Finder
 }
 
