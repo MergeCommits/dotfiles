@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 
 # CLI
 brew "git"
+brew "jsonnet"
 
 # Apps
 cask "1password"
