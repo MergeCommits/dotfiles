@@ -40,7 +40,7 @@ local bundle = import 'bundle.libsonnet';
            self.outputKey(input, ['command']),
            self.condition('unless', bundle.standard)),
 
-  doubleTapAction(description, variableName, input, outputOnDoubleTap):: {
+  doubleTapAction(description, variableName, input, output, outputOnDoubleTap):: {
     description: description,
     manipulators: [
     {
@@ -61,10 +61,7 @@ local bundle = import 'bundle.libsonnet';
         "type": "basic",
         "from": input,
         "to": [
-            {
-                key_code: input.key_code,
-                modifiers: input.modifiers.mandatory
-            },
+            output.output,
             {
                 "set_variable": {
                     "name": variableName,

@@ -96,6 +96,13 @@ local k = import 'lib/karabiner.libsonnet';
         k.rule('Win',
             k.input('command', key_is_modifier=true),
             k.outputKey('launchpad', output_type='to_if_alone')),
+
+        // Double tap Keys
+        k.doubleTapAction('Cut on double Copy', "trigger_cut", 
+            k.input('c', ['control'], false, true),
+            k.outputKey('c', ['command']),
+            k.outputKey('x', ['command'])),
+
         // Alphanumeric Keys
         k.ruleSwapControlModifierToCommand('a'),
         k.ruleSwapControlModifierToCommand('b'),
@@ -186,10 +193,6 @@ local k = import 'lib/karabiner.libsonnet';
         k.rule('9 (Cmd) [Open ninth pinned Dock app]',
             k.input('9', ['command']),
             k.runDockedApp('7'),
-            k.condition('unless', bundle.standard)),
-
-        k.doubleTapAction('Cut on double Copy', "trigger_cut", 
-            k.input('c', ['command'], false, true),
-            k.outputKey('x', ['command']))        
+            k.condition('unless', bundle.standard)),    
     ],
 }
