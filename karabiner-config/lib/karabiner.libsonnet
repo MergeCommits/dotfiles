@@ -40,6 +40,60 @@ local bundle = import 'bundle.libsonnet';
            self.outputKey(input, ['command']),
            self.condition('unless', bundle.standard)),
 
+  doubleTapAction(description, variableName, input, outputOnDoubleTap):: {
+    description: description,
+    manipulators: [
+    {
+        type: "basic",
+        conditions: [
+            {
+                "type": "variable_if",
+                "name": variableName,
+                "value": 1
+            }
+        ],
+        "from": input,
+        [outputOnDoubleTap.to_type]: [
+            outputOnDoubleTap.output,
+        ],
+    },
+    {
+        "type": "basic",
+        "from": input,
+        "to": [
+            {
+                key_code: input.key_code,
+                modifiers: input.modifiers.mandatory
+            },
+            {
+                "set_variable": {
+                    "name": variableName,
+                    "value": 1
+                }
+            }
+        ],
+        "to_delayed_action": {
+            "to_if_invoked": [
+                {
+                    "set_variable": {
+                        "name": variableName,
+                        "value": 0
+                    }
+                }
+            ],
+            "to_if_canceled": [
+                {
+                    "set_variable": {
+                        "name": variableName,
+                        "value": 0
+                    }
+                }
+            ]
+        }
+    }
+]
+  },
+
   // input
   //
   // key (string, required)
@@ -50,11 +104,11 @@ local bundle = import 'bundle.libsonnet';
   //
   // key_is_modifier (boolean, optional)
   //   removes entire 'modifiers' object; only use when <key> is a modifier itself
-  input(key, modifiers=null, key_is_modifier=false):: {
+  input(key, modifiers=null, key_is_modifier=false, noOptional=false):: {
     key_code: key,
     [if key_is_modifier then null else 'modifiers']: {
       [if modifiers != null then 'mandatory']: modifiers,
-      optional: ['any'],
+      [if noOptional then null else 'optional']: ['any'],
     },
   },
 
