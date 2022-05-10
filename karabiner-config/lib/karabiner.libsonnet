@@ -55,6 +55,12 @@ local bundle = import 'bundle.libsonnet';
         "from": input,
         [outputOnDoubleTap.to_type]: [
             outputOnDoubleTap.output,
+            {
+                "set_variable": {
+                    "name": variableName,
+                    "value": 0
+                }
+            }
         ],
     },
     {
@@ -71,14 +77,6 @@ local bundle = import 'bundle.libsonnet';
         ],
         "to_delayed_action": {
             "to_if_invoked": [
-                {
-                    "set_variable": {
-                        "name": variableName,
-                        "value": 0
-                    }
-                }
-            ],
-            "to_if_canceled": [
                 {
                     "set_variable": {
                         "name": variableName,
