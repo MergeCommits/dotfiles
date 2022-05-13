@@ -1,8 +1,12 @@
 /* View count below main video. */
-#formatted-snippet-text > span:nth-child(1) {
+#formatted-snippet-text > span:nth-child(1),
+#description-inline-expander > yt-formatted-string > span:nth-child(1) /* When description is expanded. */
+{
     display: none;
 }
-#formatted-snippet-text > span:nth-child(2) {
+#formatted-snippet-text > span:nth-child(2), 
+#description-inline-expander > yt-formatted-string > span:nth-child(2) /* When description is expanded. */
+{
 	display: none; /* Remove the space next to the date. */
 }
 
