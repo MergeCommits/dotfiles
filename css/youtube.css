@@ -1,9 +1,9 @@
 /* View count below main video. */
-ytd-video-view-count-renderer {
-    display: none !important;
+#formatted-snippet-text > span:nth-child(1) {
+    display: none;
 }
-.ytd-video-primary-info-renderer#dot {
-	display: none; /* Remove the now leading dot next to the date. */
+#formatted-snippet-text > span:nth-child(2) {
+	display: none; /* Remove the space next to the date. */
 }
 
 /* View counts on homepage, in related videos and in history. */
@@ -20,7 +20,7 @@ ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-vi
 }
 
 /* Subscriber count below main video. */
-#owner-sub-count {
+#upload-info #owner-sub-count {
 	display: none;
 }
 #top-row.ytd-video-secondary-info-renderer {
@@ -43,7 +43,7 @@ ytd-sentiment-bar-renderer#sentiment {
 }
 
 /* Comments section. */
-#comments {
+#comments, #owner-and-teaser #comment-teaser {
     display: none;
 }
 
