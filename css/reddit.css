@@ -9,6 +9,6 @@ button[aria-label="downvote"] {
 }
 
 /* Comment count */
-a[data-click-id="comments"] span {
+.icon.icon-comment + span {
 	display: none;
 }
