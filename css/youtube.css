@@ -7,7 +7,7 @@
 #formatted-snippet-text > span:nth-child(2), 
 #description-inline-expander > yt-formatted-string > span:nth-child(2) /* When description is expanded. */
 {
-	display: none; /* Remove the space next to the date. */
+    display: none; /* Remove the space next to the date. */
 }
 
 /* View counts on homepage, in related videos and in history. */
@@ -15,28 +15,30 @@
     display: none !important;
 }
 ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-video-meta-block {
-	display: none !important; /* Remove the now trailing dot next to the channel name in history. */
+    display: none !important; /* Remove the now trailing dot next to the channel name in history. */
 }
 
 /* View count on channel page. */
 #metadata-line.ytd-grid-video-renderer span.ytd-grid-video-renderer:first-of-type {
-	display: none;
+    display: none;
 }
 
 /* Subscriber count below main video. */
 #upload-info #owner-sub-count {
-	display: none;
+    display: none;
 }
 #top-row.ytd-video-secondary-info-renderer {
-	margin-bottom: 0 !important; /* Remove a now awkward space between the channel name and description. */
+    margin-bottom: 0 !important; /* Remove a now awkward space between the channel name and description. */
 }
 
 /* Subscriber count on channel page. */
 #subscriber-count {
+    display: none;
+}
 
 /* Like/Dislike buttons and text. */
 ytd-toggle-button-renderer.force-icon-button a.ytd-toggle-button-renderer {
-	display: none !important;
+    display: none !important;
 }
 
 /* Like/Dislike sentiment bar. */
@@ -51,5 +53,5 @@ ytd-sentiment-bar-renderer#sentiment {
 
 /* Live chat. */
 #chat {
-	display: none;
+    display: none;
 }
