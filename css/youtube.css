@@ -33,8 +33,6 @@ ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-vi
 
 /* Subscriber count on channel page. */
 #subscriber-count {
-	display: none;
-}
 
 /* Like/Dislike buttons and text. */
 ytd-toggle-button-renderer.force-icon-button a.ytd-toggle-button-renderer {
