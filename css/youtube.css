@@ -47,8 +47,13 @@ ytd-sentiment-bar-renderer#sentiment {
 }
 
 /* Comments section. */
-#comments, #owner-and-teaser #comment-teaser {
+#comments {
     display: none;
+}
+
+/* Comment teaser */
+#comment-teaser {
+	display: none;
 }
 
 /* Live chat. */
