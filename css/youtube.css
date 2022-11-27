@@ -1,0 +1,87 @@
+/* View count below main video */
+#info-container #info > span:nth-child(1),
+#info-container #info > span:nth-child(2) /* space between view count and date */ {
+    display: none;
+}
+#info-container #info > span:nth-child(3) /* prevent date uploaded line from wrapping */ {
+	white-space: nowrap;
+}
+
+/* View count tooltip */
+#info-container + tp-yt-paper-tooltip #tooltip {
+	display: none;
+}
+
+/* View counts on homepage and in history */
+#metadata-line .ytd-video-meta-block:first-of-type {
+    display: none !important;
+}
+#metadata-line .ytd-video-meta-block:nth-of-type(2)::before {
+    display: none !important; /* Trailing dot on homepage */
+}
+ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-video-meta-block {
+    display: none !important; /* Trailing dot in history */
+}
+
+/* View count on channel page */
+#metadata-line .ytd-grid-video-renderer:first-of-type {
+    display: none !important;
+}
+#metadata-line .ytd-grid-video-renderer:nth-of-type(2)::before {
+    display: none !important; /* Trailing dot */
+}
+
+
+
+/* Subscriber count below main video */
+#upload-info #owner-sub-count {
+    display: none;
+}
+
+/* Subscriber count on channel page */
+#subscriber-count {
+    display: none;
+}
+
+/* Subscriber count in search results */
+#main-link #subscribers {
+	display: none;
+}
+
+#main-link #dot {
+	display: none; /* Trailing dot */
+}
+
+
+/* Like/Dislike buttons */
+ytd-segmented-like-dislike-button-renderer {
+    display: none !important;
+}
+
+#top-level-buttons-computed > ytd-button-renderer:nth-child(2) {
+    margin-left: 0; /* remove space next to share button */
+}
+
+
+
+/* Comments section */
+#comments {
+    display: none;
+}
+
+/* Comment teaser */
+#comment-teaser {
+    display: none;
+}
+
+/* Live chat */
+#chat {
+    display: none;
+}
+
+
+
+/* Fix content space overflowing when the page's width pushes the content to a single column. */
+#page-manager.ytd-app {
+	overflow-x: hidden !important;
+}
