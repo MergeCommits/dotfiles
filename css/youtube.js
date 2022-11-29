@@ -14,7 +14,7 @@ setInterval(function () {
 
     const viewCount = document.querySelector("#info-container #info > span:nth-child(3)");
 
-    if (viewCount.innerText.indexOf(",") === -1 && viewCount.innerText.innerText("streaming") === -1) {
+    if (viewCount.innerText.indexOf(",") === -1 && viewCount.innerText.indexOf("streaming") === -1) {
         viewCount.innerHTML = `${text} (${viewCount.innerText})`;
         console.log(viewCount);
     }
