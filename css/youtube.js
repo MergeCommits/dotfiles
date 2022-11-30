@@ -20,6 +20,6 @@ setInterval(function () {
     const collapsedDescriptionText = collapsedDescriptionElement.innerText.trim();
     
     if (!collapsedDescriptionText.includes(expandedDescriptionText)) {
-		collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionElement.innerText})`;
+        collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionElement.innerText})`;
     }
 }, 1000);
