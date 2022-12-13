@@ -9,13 +9,17 @@ setInterval(function () {
 
 // Replace "X years ago" upload date with the actual date.
 setInterval(function () {
-    const tooltip = document.querySelector("#info-container + tp-yt-paper-tooltip #tooltip");
-    const text = tooltip.innerText.replace(/.*•\s/, "");
+    const expandedDescriptionElement = document.querySelector("#info-container + tp-yt-paper-tooltip #tooltip");
+    const expandedDescriptionText = expandedDescriptionElement.innerText.replace(/.*•\s/, "").trim();
+    
+    if (!expandedDescriptionText.includes(",")) {
+    	return;
+    }
 
-    const viewCount = document.querySelector("#info-container #info > span:nth-child(3)");
-
-    if (viewCount.innerText.indexOf(",") === -1) {
-        viewCount.innerHTML = `${text} (${viewCount.innerText})`;
-        console.log(viewCount);
+    const collapsedDescriptionElement = document.querySelector("#info-container #info > span:nth-child(3)");
+    const collapsedDescriptionText = collapsedDescriptionElement.innerText.trim();
+    
+    if (!collapsedDescriptionText.includes(expandedDescriptionText)) {
+        collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionElement.innerText})`;
     }
 }, 1000);
