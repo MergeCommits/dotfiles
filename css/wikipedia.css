@@ -1,17 +1,17 @@
 /* Dark mode wikipedia for Vector 2022 skin. */
 
 :root {
-	--text-color: #c1c1c1;
-	--bg-color: #0f0f0f;
-	--boxed-content-bg: #272727;
-	--infobox-header-bg: #3f3f3f;
-	--table-header-bg: var(--infobox-header-bg);
-	--hyperlink-color: #2eb6ef;
-	--border-color: #707070;
+    --text-color: #c1c1c1;
+    --bg-color: #0f0f0f;
+    --boxed-content-bg: #272727;
+    --infobox-header-bg: #3f3f3f;
+    --table-header-bg: var(--infobox-header-bg);
+    --hyperlink-color: #2eb6ef;
+    --border-color: #707070;
 }
 
 .mw-page-container, body {
-	background-color: var(--bg-color);
+    background-color: var(--bg-color);
 }
 
 a {
@@ -21,7 +21,7 @@ a {
 body,
 h1, h2, h3, h4, h5, h6
 {
-	color: var(--text-color) !important;
+    color: var(--text-color) !important;
 }
 
 li::before {
@@ -29,14 +29,14 @@ li::before {
 }
 
 .infobox {
-	background-color: var(--boxed-content-bg);
-	color: var(--text-color);
-	border: none;
+    background-color: var(--boxed-content-bg);
+    color: var(--text-color);
+    border: none;
 }
 
 /* infobox header */
 .infobox-above, .infobox-header {
-	background-color: var(--infobox-header-bg) !important;
+    background-color: var(--infobox-header-bg) !important;
 }
 
 /* image blocks */
@@ -69,13 +69,13 @@ div.thumbinner img {
 }
 
 .wikitable * {
-	border-color: var(--border-color) !important;
+    border-color: var(--border-color) !important;
 }
 
 /* side notice boxes */
 .side-box {
-	background-color: var(--boxed-content-bg) !important;
-	border: none !important;
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
 }
 
 /* ambox */
