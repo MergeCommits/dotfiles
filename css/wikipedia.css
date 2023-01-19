@@ -1,0 +1,87 @@
+/* Dark mode wikipedia for Vector 2022 skin. */
+
+:root {
+	--text-color: #c1c1c1;
+	--bg-color: #0f0f0f;
+	--boxed-content-bg: #272727;
+	--infobox-header-bg: #3f3f3f;
+	--table-header-bg: var(--infobox-header-bg);
+	--hyperlink-color: #2eb6ef;
+	--border-color: #707070;
+}
+
+.mw-page-container, body {
+	background-color: var(--bg-color);
+}
+
+a {
+    color: var(--hyperlink-color);
+}
+
+body,
+h1, h2, h3, h4, h5, h6
+{
+	color: var(--text-color) !important;
+}
+
+li::before {
+    color: var(--text-color) !important;
+}
+
+.infobox {
+	background-color: var(--boxed-content-bg);
+	color: var(--text-color);
+	border: none;
+}
+
+/* infobox header */
+.infobox-above, .infobox-header {
+	background-color: var(--infobox-header-bg) !important;
+}
+
+/* image blocks */
+div.thumbinner {
+    background-color: var(--boxed-content-bg);
+    border: none;
+    padding: 0.5em; /* more padding on boxes since borders are gone */
+}
+
+/* images inside image blocks */
+div.thumbinner img {
+    border: none;
+}
+
+/* tables and timelines */
+.wikitable {
+    background-color: var(--boxed-content-bg);
+    color: var(--text-color);
+    border: none;
+}
+
+/* table headers */
+.wikitable th:not([scope="row"]) /* excludes timelines */ {
+    background-color: var(--table-header-bg) !important;
+}
+
+
+.wikitable caption {
+    color: var(--text-color);
+}
+
+.wikitable * {
+	border-color: var(--border-color) !important;
+}
+
+/* side notice boxes */
+.side-box {
+	background-color: var(--boxed-content-bg) !important;
+	border: none !important;
+}
+
+/* ambox */
+.ambox {
+    background-color: var(--boxed-content-bg) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+}
