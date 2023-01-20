@@ -69,6 +69,10 @@ div.thumbinner {
     padding: var(--padding-for-removed-borders);
 }
 
+div.thumb {
+    background-color: var(--boxed-content-bg) !important;
+}
+
 /* Images inside image blocks */
 div.thumbinner img {
     border: none;
