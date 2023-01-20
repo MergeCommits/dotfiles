@@ -4,13 +4,15 @@
     --text-color: #c1c1c1;
     --bg-color: #0f0f0f;
     --boxed-content-bg: #272727;
-    --infobox-header-bg: #3f3f3f;
-    --table-header-bg: var(--infobox-header-bg);
+    --infobox-header-bg: #3c313c;
+    --table-header-bg: #3f3f3f;
     --hyperlink-color: #2eb6ef;
-    --border-color: #707070;
+    --border-color: #5f5f5f;
+    --padding-for-removed-borders: 0.5em;
 }
 
-.mw-page-container, body {
+.mw-page-container,
+body {
     background-color: var(--bg-color);
 }
 
@@ -19,13 +21,33 @@ a {
 }
 
 body,
-h1, h2, h3, h4, h5, h6
-{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--text-color) !important;
 }
 
-li::before {
+/* list bullet points */
+li {
+    color: var(--text-color);
+}
+
+/* Popups */
+.mwe-popups-container {
+    background-color: var(--boxed-content-bg) !important;
     color: var(--text-color) !important;
+}
+
+.mwe-popups-extract {
+    color: var(--text-color) !important;
+}
+
+/* Weird gradient at bottom of popups */
+.mwe-popups .mwe-popups-extract[dir="ltr"]:after {
+    background: none !important;
 }
 
 .infobox {
@@ -34,54 +56,107 @@ li::before {
     border: none;
 }
 
-/* infobox header */
-.infobox-above, .infobox-header {
+/* Infobox header */
+.infobox-above,
+.infobox-header {
     background-color: var(--infobox-header-bg) !important;
 }
 
-/* image blocks */
+/* Image blocks */
 div.thumbinner {
     background-color: var(--boxed-content-bg);
     border: none;
-    padding: 0.5em; /* more padding on boxes since borders are gone */
+    padding: var(--padding-for-removed-borders);
 }
 
-/* images inside image blocks */
+/* Images inside image blocks */
 div.thumbinner img {
     border: none;
 }
 
-/* tables and timelines */
+/* Tables and timelines */
 .wikitable {
     background-color: var(--boxed-content-bg);
     color: var(--text-color);
     border: none;
 }
 
-/* table headers */
+/* Table headers */
 .wikitable th:not([scope="row"]) /* excludes timelines */ {
     background-color: var(--table-header-bg) !important;
 }
-
 
 .wikitable caption {
     color: var(--text-color);
 }
 
-.wikitable * {
+.wikitable > tr > th:not([scope="row"]),
+.wikitable > tr > td,
+.wikitable > * > tr > th:not([scope="row"]),
+.wikitable > * > tr > td {
     border-color: var(--border-color) !important;
 }
 
-/* side notice boxes */
+/* Side notice box */
 .side-box {
     background-color: var(--boxed-content-bg) !important;
     border: none !important;
 }
 
-/* ambox */
+/* Ambox */
 .ambox {
     background-color: var(--boxed-content-bg) !important;
     border-top: none !important;
     border-bottom: none !important;
     border-right: none !important;
+}
+
+/* Table of contents */
+.vector-toc {
+    background-color: var(--boxed-content-bg) !important;
+}
+
+/* This doesn't cover every type of link but their style has a list of like 20 exceptions so let's keep it simple here */
+.vector-toc-link {
+    color: var(--hyperlink-color) !important;
+}
+
+/* Remove whatever this gradient is at the bottom of the toc */
+@media screen and (min-width: 1000px) {
+    .vector-toc-pinned #vector-toc-pinned-container .vector-toc:after {
+        background: none !important;
+    }
+}
+
+/* Header */
+.mw-header {
+    background-color: var(--table-header-bg) !important;
+}
+
+.vector-sticky-header {
+    background-color: var(--table-header-bg) !important;
+    color: var(--text-color) !important;
+    border: none !important;
+}
+
+/* Toolbar */
+.vector-page-toolbar-container {
+    box-shadow: 0 1px var(--border-color);
+}
+
+.vector-menu-tabs .mw-list-item.selected a,
+.vector-menu-tabs .mw-list-item.selected a:visited {
+    color: var(--text-color) !important;
+}
+
+/* Main page */
+.mp-box {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+    padding: var(--padding-for-removed-borders) !important;
+}
+
+.mp-h2 {
+    background-color: var(--infobox-header-bg) !important;
+    border: none !important;
 }
