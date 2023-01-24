@@ -4,6 +4,7 @@
     --text-color: #c1c1c1;
     --bg-color: #0f0f0f;
     --boxed-content-bg: #272727;
+    --navbox-yang-bg: #303030;
     --infobox-header-bg: #3c313c;
     --table-header-bg: #3f3f3f;
     --hyperlink-color: #2eb6ef;
@@ -86,7 +87,7 @@ div.thumbinner img {
 }
 
 /* Table headers */
-.wikitable th:not([scope="row"]) /* excludes timelines */ {
+.wikitable:not(.release-timeline) th /* excludes timelines */ {
     background-color: var(--table-header-bg) !important;
 }
 
@@ -94,9 +95,9 @@ div.thumbinner img {
     color: var(--text-color);
 }
 
-.wikitable > tr > th:not([scope="row"]),
+.wikitable > tr > th,
 .wikitable > tr > td,
-.wikitable > * > tr > th:not([scope="row"]),
+.wikitable > * > tr > th,
 .wikitable > * > tr > td {
     border-color: var(--border-color) !important;
 }
@@ -109,10 +110,51 @@ div.thumbinner img {
 
 /* Ambox */
 .ambox {
-    background-color: var(--boxed-content-bg) !important;
+    background-color: var(--table-header-bg) !important;
     border-top: none !important;
     border-bottom: none !important;
     border-right: none !important;
+}
+
+/* Navbox */
+.navbox {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
+.navbox-title {
+    background-color: var(--infobox-header-bg) !important;
+}
+
+.navbox-group {
+    background-color: var(--infobox-header-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.navbox-list {
+    background-color: var(--boxed-content-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.navbox-odd {
+    background-color: var(--navbox-yang-bg) !important;
+}
+
+.navbox-abovebelow {
+    background-color: var(--infobox-header-bg) !important;
+}
+
+/* Message box */
+.mw-message-box {
+    background-color: var(--table-header-bg) !important;
+    border: none !important;
+    color: var(--text-color) !important;
+}
+
+/* Categories */
+.catlinks {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
 }
 
 /* Table of contents */
@@ -151,6 +193,22 @@ div.thumbinner img {
 .vector-menu-tabs .mw-list-item.selected a,
 .vector-menu-tabs .mw-list-item.selected a:visited {
     color: var(--text-color) !important;
+}
+
+/* Side menu */
+.vector-main-menu {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
+.vector-menu-heading-label,
+.vector-main-menu-action-heading {
+    color: var(--text-color) !important;
+}
+
+.vector-main-menu a,
+.wb-langlinks-link a {
+    color: var(--hyperlink-color) !important;
 }
 
 /* Main page */
