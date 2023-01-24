@@ -102,6 +102,12 @@ div.thumbinner img {
     border-color: var(--border-color) !important;
 }
 
+/* Review table */
+.video-game-reviews caption {
+    background-color: var(--table-header-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
 /* Side notice box */
 .side-box {
     background-color: var(--boxed-content-bg) !important;
@@ -148,6 +154,17 @@ div.thumbinner img {
 .mw-message-box {
     background-color: var(--table-header-bg) !important;
     border: none !important;
+    color: var(--text-color) !important;
+}
+
+/* Portal bar */
+.portal-bar {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
+/* Footer */
+.mw-footer li {
     color: var(--text-color) !important;
 }
 
