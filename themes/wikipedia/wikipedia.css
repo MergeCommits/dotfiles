@@ -79,6 +79,12 @@ div.thumbinner img {
     border: none;
 }
 
+/* Quote box */
+.quotebox {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
 /* Tables and timelines */
 .wikitable {
     background-color: var(--boxed-content-bg);
