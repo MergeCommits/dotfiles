@@ -169,6 +169,22 @@ div.thumbinner img {
     border: none !important;
 }
 
+/* Portal box */
+.portalbox {
+	background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--boxed-content-bg) !important;
+    border: none !important;
+}
+
+.sidebar-list-title {
+	background-color: var(--infobox-header-bg) !important;
+}
+
 /* Footer */
 .mw-footer li {
     color: var(--text-color) !important;
