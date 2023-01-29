@@ -8,18 +8,24 @@ document.querySelectorAll("td").forEach(function (row) {
     }
 
     if (row.style.backgroundColor) {
-        row.style.backgroundColor = "var(--boxed-content-bg)";
+        row.style.backgroundColor = "";
     }
 });
 
 document.querySelectorAll("tr").forEach(function (row) {
     if (row.style.backgroundColor) {
-        row.style.backgroundColor = "var(--boxed-content-bg)";
+        row.style.backgroundColor = "";
     }
 });
 
 document.querySelectorAll("th").forEach(function (row) {
     if (row.style.backgroundColor) {
-        row.style.backgroundColor = "var(--table-header-bg)";
+        row.style.backgroundColor = "";
+    }
+});
+
+document.querySelectorAll("table").forEach(function (row) {
+    if (row.style.backgroundColor) {
+        row.style.backgroundColor = "";
     }
 });
