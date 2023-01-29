@@ -6,4 +6,20 @@ document.querySelectorAll("td").forEach(function (row) {
         row.style.backgroundColor = "rgb(24,38,31)";
         row.style.color = "var(--text-color)";
     }
+
+    if (row.style.backgroundColor) {
+        row.style.backgroundColor = "var(--boxed-content-bg)";
+    }
+});
+
+document.querySelectorAll("tr").forEach(function (row) {
+    if (row.style.backgroundColor) {
+        row.style.backgroundColor = "var(--boxed-content-bg)";
+    }
+});
+
+document.querySelectorAll("th").forEach(function (row) {
+    if (row.style.backgroundColor) {
+        row.style.backgroundColor = "var(--table-header-bg)";
+    }
 });
