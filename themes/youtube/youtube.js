@@ -9,8 +9,8 @@ setInterval(function () {
 
 // Replace "X years ago" upload date with the actual date.
 setInterval(function () {
-    const expandedDescriptionElement = document.querySelector("#info-container + tp-yt-paper-tooltip #tooltip");
-    const expandedDescriptionText = expandedDescriptionElement.innerText.replace(/.*•\s/, "").trim();
+    const expandedDescriptionElement = document.querySelector("#info-strings > :nth-child(2)");
+    const expandedDescriptionText = expandedDescriptionElement.innerText.trim();
     
     if (!expandedDescriptionText.includes(",")) {
     	return;
