@@ -36,6 +36,12 @@ li {
     color: var(--text-color);
 }
 
+/* Code blocks */
+pre, code, .mw-code {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
 /* Popups */
 .mwe-popups-container {
     background-color: var(--boxed-content-bg) !important;
