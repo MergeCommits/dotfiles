@@ -36,9 +36,6 @@ systemSettings() {
 
     defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-    # Turn off the “Application Downloaded from Internet” quarantine warning:
-    defaults write com.apple.LaunchServices LSQuarantine -bool false
-
     # Disable automatic capitalization.
     defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
