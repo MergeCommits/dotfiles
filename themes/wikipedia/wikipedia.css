@@ -40,6 +40,11 @@ li {
 pre, code, .mw-code {
     background-color: #000000 !important;
     color: #ffffff !important;
+    border-color: var(--border-color) !important;
+}
+
+code {
+    color: var(--text-color) !important;
 }
 
 /* Popups */
