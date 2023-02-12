@@ -9,4 +9,6 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [zsh wakeup.sh]
+  - 
+    command: zsh wakeup.sh
+    stdout: true
