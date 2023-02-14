@@ -31,20 +31,15 @@ h6 {
     color: var(--text-color) !important;
 }
 
-/* list bullet points */
-li {
-    color: var(--text-color);
-}
-
 /* Code blocks */
 pre, code, .mw-code {
     background-color: #000000 !important;
     color: #ffffff !important;
-    border-color: var(--border-color) !important;
 }
 
-code {
-    color: var(--text-color) !important;
+/* Math fallback images */
+.mwe-math-fallback-image-inline {
+    filter: invert(100%);
 }
 
 /* Popups */
