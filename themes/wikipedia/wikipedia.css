@@ -120,6 +120,19 @@ div.thumbinner img {
     border-color: var(--border-color) !important;
 }
 
+/* Tracklist */
+.tracklist tr:nth-child(2n-1) {
+	background-color: var(--navbox-yang-bg) !important;
+}
+
+.tracklist tr {
+	background-color: var(--boxed-content-bg) !important;
+}
+
+.tracklist th[scope="col"] {
+	background-color: unset !important;
+}
+
 /* Side notice box */
 .side-box {
     background-color: var(--boxed-content-bg) !important;
