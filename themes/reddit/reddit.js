@@ -1,4 +1,4 @@
-const getAllPostsArray = () => {
+const getAllPosts = () => {
     const allPosts = document.querySelector('[data-scroller-first]').parentNode.children;
     return allPosts;
 }
@@ -8,7 +8,7 @@ const detectPromotedPosts = (postTextContent) => {
 }
 
 setInterval(() => {
-    let allPosts = getAllPostsArray();
+    let allPosts = getAllPosts();
     for (let post of allPosts) {
         if (detectPromotedPosts(post.textContent)) {
             post.remove();
