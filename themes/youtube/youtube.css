@@ -85,7 +85,7 @@ ytd-segmented-like-dislike-button-renderer {
 
 
 
-/* Fix content space overflowing when the page's width pushes the content to a single column. */
-#page-manager.ytd-app {
+/* Fix content space overflowing horizontally when the page's width starts getting small. */
+html {
 	overflow-x: hidden !important;
 }
