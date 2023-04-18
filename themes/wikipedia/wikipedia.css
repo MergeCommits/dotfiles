@@ -227,13 +227,13 @@ div.thumbinner img {
 
 /* Remove whatever this gradient is at the bottom of the toc */
 @media screen and (min-width: 1000px) {
-    .vector-toc-pinned #vector-toc-pinned-container .vector-toc:after {
+    #vector-toc-pinned-container .vector-toc:after {
         background: none !important;
     }
 }
 
 /* Header */
-.mw-header {
+.vector-header-container {
     background-color: var(--table-header-bg) !important;
 }
 
