@@ -8,6 +8,9 @@ function convertToNumber(str) {
     }
 }
 
+// Hides the "third recommended video" from the related videos section.
+// Just detects when there's a video with the "New" label that has less than 1K views.
+// Could be edge cases when watching low viewcount videos but it's good enough.
 setInterval(function () {
     const list = document.querySelectorAll("ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer");
     const array = Array.from(list);
