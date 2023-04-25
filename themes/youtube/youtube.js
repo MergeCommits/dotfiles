@@ -1,9 +1,28 @@
-// Parsing out view count in related videos.
+function convertToNumber(str) {
+    if (str.includes('M')) {
+        return parseFloat(str) * 1000000;
+    } else if (str.includes('K')) {
+        return parseFloat(str) * 1000;
+    } else {
+        return parseFloat(str);
+    }
+}
+
 setInterval(function () {
-    const list = document.querySelectorAll(".ytp-videowall-still-info-author");
-    const array = [...list];
+    const list = document.querySelectorAll("ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer");
+    const array = Array.from(list);
+    
     array.forEach((element) => {
-        element.innerHTML = element.innerHTML.replace(/\s•.*/, "");
+        const viewCountElement = element.querySelector("#metadata-line span.ytd-video-meta-block:first-of-type");
+        const viewCount = viewCountElement.innerText;
+        const viewCountNumber = convertToNumber(viewCount);
+        
+        if (viewCountNumber < 1000) {
+            const badge = element.querySelector(".badge span");
+            if (badge && badge.innerText.trim() === "New") {
+               element.style.display = "none";
+            }
+        }
     });
 }, 1000);
 
