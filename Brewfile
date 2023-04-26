@@ -15,7 +15,6 @@ cask "rectangle"
 # borpaBusiness Apps
 cask "google-chrome"
 cask "visual-studio-code"
-cask "sourcetree"
 cask "slack"
 
 # Mac App Store Apps
