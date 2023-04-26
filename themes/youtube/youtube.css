@@ -46,8 +46,8 @@ ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-vi
 /* Subscriber count in search results */
 
 #main-link #video-count 
-/* This appears to be an error. It used to be "Sucscribers - Viewcount"
-	but now it's "Name - Sucscribers" and the IDs were not updated. */
+/* This appears to be an error. It used to be "Subscribers - Viewcount"
+	but now it's "Name - Subscribers" and the IDs were not updated. */
 {
 	display: none;
 }
