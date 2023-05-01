@@ -1,10 +1,15 @@
 function convertToNumber(str) {
+    const parsedNumber = parseFloat(str);
+    if (isNaN(parsedNumber)) {
+        return 0;
+    }
+
     if (str.includes('M')) {
-        return parseFloat(str) * 1000000;
+        return parsedNumber * 1000000;
     } else if (str.includes('K')) {
-        return parseFloat(str) * 1000;
+        return parsedNumber * 1000;
     } else {
-        return parseFloat(str);
+        return parsedNumber;
     }
 }
 
