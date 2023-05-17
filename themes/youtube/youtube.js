@@ -17,6 +17,7 @@ function convertToNumber(str) {
 // Just detects when there's a video with the "New" label that has less than 1K views.
 // Could be edge cases when watching low viewcount videos but it's good enough.
 setInterval(function () {
+    const VIEW_COUNT_THRESHOLD = 9999;
     const list = document.querySelectorAll("ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer");
     const array = Array.from(list);
     
@@ -25,7 +26,7 @@ setInterval(function () {
         const viewCount = viewCountElement.innerText;
         const viewCountNumber = convertToNumber(viewCount);
         
-        if (viewCountNumber < 1000) {
+        if (viewCountNumber <= VIEW_COUNT_THRESHOLD) {
             const badge = element.querySelector(".badge span");
             if (badge && badge.innerText.trim() === "New") {
                element.style.display = "none";
