@@ -69,7 +69,9 @@ setInterval(function () {
                         element.setAttribute("data-view-count", viewCount);
                     }
                 } else if (videoBadgeText !== false) {
-                    console.log(`Video with badge text "${videoBadgeText}" found. Skipping (text hasn't loaded yet?).`)
+                    console.log(`Video with badge text "${videoBadgeText}" found. Logging element and keeping.`)
+                    console.log(element);
+                    element.setAttribute("data-view-count", viewCount);
                 } else if (videoBadgeText === false) {
                     console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
                     element.setAttribute("data-view-count", viewCount);
