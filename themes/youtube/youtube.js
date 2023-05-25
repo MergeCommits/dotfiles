@@ -1,6 +1,7 @@
 // Hides the "third recommended video" from the related videos section.
-// Just detects when there's a video with the "New" label that has less than 1K views.
+// Just detects when there's a video with the "New" label that has less than 10K views.
 // Could be edge cases when watching low viewcount videos but it's good enough.
+// NOTE: This also removes livestreams with less than 1K views.
 setInterval(function () {
     const hideVideo = (element) => {
         element.style.display = "none";
@@ -12,39 +13,25 @@ setInterval(function () {
         return element.hasAttribute("data-view-count");
     }
 
-    const videoIsSus = (element) => {
-        const badge = element.querySelector("ytd-badge-supported-renderer .badge span");
+    const getVideoBadgeText = (element) => {
+        const badge = element.querySelector(".secondary-metadata > ytd-badge-supported-renderer .badge span");
         if (!badge) {
             return false;
         }
 
-        const badgeText = badge.innerText.trim().toLowerCase();
-
-        if (badgeText === "new") {
-            console.log("New video found.");
-            return true;
-        }
-
-        if (badgeText === "live") {
-            console.log("Live video found.");
-            return true;
-        }
-
-        console.log("Video with badge " + badgeText + " found.")
-        return false;
+        return badge.innerText.trim().toLowerCase();
     }
 
     const getViewCount = (element) => {
         const viewCountElement = element.querySelector("#metadata-line span.ytd-video-meta-block:first-of-type");
         if (!viewCountElement) {
-            console.log("We got no viewcount on " + element);
             return 0;
         }
 
         const viewCountText = viewCountElement.innerText;
         const parsedNumber = parseFloat(viewCountText);
         if (isNaN(parsedNumber)) {
-            console.log("We got NaN viewcount on " + element);
+            console.log(`Got NaN trying to parse view count "${viewCountText}"`);
             return 0;
         }
 
@@ -58,6 +45,7 @@ setInterval(function () {
     }
 
     const VIEW_COUNT_THRESHOLD = 9999;
+    const LIVESTREAM_VIEW_COUNT_THRESHOLD = 999;
     const list = document.querySelectorAll("ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer");
     const array = Array.from(list);
 
@@ -67,11 +55,23 @@ setInterval(function () {
             const viewCount = getViewCount(element);
 
             if (viewCount <= VIEW_COUNT_THRESHOLD) {
-                if (videoIsSus(element)) {
-                    console.log("Element with " + viewCount + " view(s) removed.");
+                const videoBadgeText = getVideoBadgeText(element);
+                
+                if (videoBadgeText === "new") {
+                    console.log(`New video found. Removing at ${viewCount} view(s).`);
                     hideVideo(element);
-                } else {
-                    console.log("Element with " + viewCount + " view(s) kept.");
+                } else if (videoBadgeText === "live") {
+                    if (viewCount <= LIVESTREAM_VIEW_COUNT_THRESHOLD) {
+                        console.log(`Live video found. Removing at ${viewCount} view(s).`);
+                        hideVideo(element);
+                    } else {
+                        console.log(`Live video found. Keeping at ${viewCount} view(s).`);
+                        element.setAttribute("data-view-count", viewCount);
+                    }
+                } else if (videoBadgeText !== false) {
+                    console.log(`Video with badge text "${videoBadgeText}" found. Skipping (text hasn't loaded yet?).`)
+                } else if (videoBadgeText === false) {
+                    console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
                     element.setAttribute("data-view-count", viewCount);
                 }
             }
