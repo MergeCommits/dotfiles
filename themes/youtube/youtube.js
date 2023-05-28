@@ -58,14 +58,14 @@ setInterval(function () {
                 const videoBadgeText = getVideoBadgeText(element);
                 
                 if (videoBadgeText === "new") {
-                    console.log(`New video found. Removing at ${viewCount} view(s).`);
+                    console.log(`Removing new video at ${viewCount} view(s).`);
                     hideVideo(element);
                 } else if (videoBadgeText === "live") {
                     if (viewCount <= LIVESTREAM_VIEW_COUNT_THRESHOLD) {
-                        console.log(`Live video found. Removing at ${viewCount} view(s).`);
+                        console.log(`Removing livesream at ${viewCount} view(s).`);
                         hideVideo(element);
                     } else {
-                        console.log(`Live video found. Keeping at ${viewCount} view(s).`);
+                        console.log(`Keeping livestream at ${viewCount} view(s).`);
                         element.setAttribute("data-view-count", viewCount);
                     }
                 } else if (videoBadgeText !== false) {
@@ -73,7 +73,7 @@ setInterval(function () {
                     console.log(element);
                     element.setAttribute("data-view-count", viewCount);
                 } else if (videoBadgeText === false) {
-                    console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
+                    console.log(`Video with no badge found. Keeping at ${viewCount} view(s).`);
                     element.setAttribute("data-view-count", viewCount);
                 }
             }
