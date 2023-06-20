@@ -43,6 +43,11 @@ ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-vi
     display: none;
 }
 
+/* Subscriber count in expanded description */
+ytd-video-description-infocards-section-renderer #subtitle {
+	display: none !important;
+}
+
 /* Subscriber count in search results */
 
 #main-link #video-count 
