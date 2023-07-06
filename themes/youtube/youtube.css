@@ -8,7 +8,7 @@
 }
 
 /* View count tooltip */
-#info-container + tp-yt-paper-tooltip #tooltip {
+ytd-watch-metadata tp-yt-paper-tooltip {
 	display: none;
 }
 
