@@ -6,6 +6,7 @@
 
 - link:
     ~/.gitconfig: dots/gitconfig
+    ~/.zshrc: dots/zshrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

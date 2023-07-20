@@ -17,6 +17,7 @@ cask "rectangle"
 cask "google-chrome"
 cask "visual-studio-code"
 cask "slack"
+cask "iterm2"
 
 # Mac App Store Apps
 # brew "mas"

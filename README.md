@@ -17,4 +17,4 @@ Clone the repository in your home directory:
 
 Install/update the dotfiles, macOS defaults, Homebrew and its packages:
 
-    ./install.sh
+    ./install
