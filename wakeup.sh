@@ -36,28 +36,36 @@ systemSettings() {
 
     defaults write NSGlobalDomain "com.apple.swipescrolldirection" -bool "false"
 
-    # Disable automatic capitalization.
+    # Disable automatic capitalization
     defaults write NSGlobalDomain "NSAutomaticCapitalizationEnabled" -bool "false"
 
-    # Disable smart dashes.
+    # Disable smart dashes
     defaults write NSGlobalDomain "NSAutomaticDashSubstitutionEnabled" -bool "false"
 
-    # Disable automatic period substitution.
+    # Disable automatic period substitution
     defaults write NSGlobalDomain "NSAutomaticPeriodSubstitutionEnabled" -bool "false"
 
-    # Disable smart quotes.
+    # Disable smart quotes
     defaults write NSGlobalDomain "NSAutomaticQuoteSubstitutionEnabled" -bool "false"
 
     # Disable auto-correct
     defaults write NSGlobalDomain "NSAutomaticSpellingCorrectionEnabled" -bool "false"
 
+    # Set Fn key to change the keyboard Input Source
+    defaults write com.apple.HIToolbox "AppleFnUsageType" -int 1
+
     killall Finder
+}
+
+copyFiles() {
+    cp -f ./settings/files/US\ No\ Symbols.keylayout ~/Library/Keyboard\ Layouts/
 }
 
 main() {
     installOrUpdateHomebrew
     textEditSettings
     systemSettings
+    copyFiles
 }
 
 main
