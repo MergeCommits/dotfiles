@@ -1,0 +1,87 @@
+{
+   "rules": [
+      {
+         "description": "Backspace (Ctrl)",
+         "manipulators": [
+            {
+               "conditions": [
+                  {
+                     "bundle_identifiers": [
+                        "^io\\.alacritty$",
+                        "^co\\.zeit\\.hyper$",
+                        "^com\\.googlecode\\.iterm2$",
+                        "^com\\.apple\\.Terminal$",
+                        "^org\\.gnu\\.emacs$",
+                        "^com\\.jetbrains",
+                        "^com\\.sublimetext\\.3$"
+                     ],
+                     "type": "frontmost_application_unless"
+                  }
+               ],
+               "from": {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": {
+                     "mandatory": [
+                        "control"
+                     ],
+                     "optional": [
+                        "any"
+                     ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "delete_or_backspace",
+                     "modifiers": [
+                        "option"
+                     ]
+                  }
+               ],
+               "type": "basic"
+            }
+         ]
+      },
+      {
+         "description": "Delete (Ctrl)",
+         "manipulators": [
+            {
+               "conditions": [
+                  {
+                     "bundle_identifiers": [
+                        "^io\\.alacritty$",
+                        "^co\\.zeit\\.hyper$",
+                        "^com\\.googlecode\\.iterm2$",
+                        "^com\\.apple\\.Terminal$",
+                        "^org\\.gnu\\.emacs$",
+                        "^com\\.jetbrains",
+                        "^com\\.sublimetext\\.3$"
+                     ],
+                     "type": "frontmost_application_unless"
+                  }
+               ],
+               "from": {
+                  "key_code": "delete_forward",
+                  "modifiers": {
+                     "mandatory": [
+                        "control"
+                     ],
+                     "optional": [
+                        "any"
+                     ]
+                  }
+               },
+               "to": [
+                  {
+                     "key_code": "delete_forward",
+                     "modifiers": [
+                        "option"
+                     ]
+                  }
+               ],
+               "type": "basic"
+            }
+         ]
+      }
+   ],
+   "title": "Windows Character Deletion Shortcuts"
+}

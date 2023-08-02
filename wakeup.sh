@@ -8,64 +8,53 @@ installOrUpdateHomebrew() {
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else
         brew update
+        brew upgrade
     fi
     
     brew bundle
 }
 
-textEditSettings() {
-    # Open TextEdit with Plain Text mode
-    defaults write com.apple.TextEdit "RichText" -int 0
-    # Disable smart quotes
-    defaults write com.apple.TextEdit "SmartQuotes" -int 0
-}
+defaultEdits() {
+    ### Globals
+    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+    defaults write NSGlobalDomain "com.apple.swipescrolldirection" -bool "false"
+    defaults write NSGlobalDomain "NSAutomaticCapitalizationEnabled" -bool "false"
+    defaults write NSGlobalDomain "NSAutomaticDashSubstitutionEnabled" -bool "false"
+    defaults write NSGlobalDomain "NSAutomaticPeriodSubstitutionEnabled" -bool "false"
+    defaults write NSGlobalDomain "NSAutomaticQuoteSubstitutionEnabled" -bool "false"
+    defaults write NSGlobalDomain "NSAutomaticSpellingCorrectionEnabled" -bool "false"
 
-systemSettings() {
+    ### Finder
     defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "false"
     defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
-    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+    defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
     
     # When performing a search, search the current folder by default
     defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
 
-    # Disable the warning when changing a file extension
-    defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
-
     # Use column view in all Finder windows by default
     defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
 
-    defaults write NSGlobalDomain "com.apple.swipescrolldirection" -bool "false"
+    killall Finder
 
-    # Disable automatic capitalization
-    defaults write NSGlobalDomain "NSAutomaticCapitalizationEnabled" -bool "false"
+    ### TextEdit
+    defaults write com.apple.TextEdit "SmartQuotes" -int 0
+    
+    # Open TextEdit with Plain Text mode
+    defaults write com.apple.TextEdit "RichText" -int 0
 
-    # Disable smart dashes
-    defaults write NSGlobalDomain "NSAutomaticDashSubstitutionEnabled" -bool "false"
-
-    # Disable automatic period substitution
-    defaults write NSGlobalDomain "NSAutomaticPeriodSubstitutionEnabled" -bool "false"
-
-    # Disable smart quotes
-    defaults write NSGlobalDomain "NSAutomaticQuoteSubstitutionEnabled" -bool "false"
-
-    # Disable auto-correct
-    defaults write NSGlobalDomain "NSAutomaticSpellingCorrectionEnabled" -bool "false"
+    ### Keyboard
 
     # Set Fn key to change the keyboard Input Source
     defaults write com.apple.HIToolbox "AppleFnUsageType" -int 1
 
-    killall Finder
-}
-
-copyFiles() {
-    cp -f ./settings/files/US\ No\ Symbols.keylayout ~/Library/Keyboard\ Layouts/
+    ### Restart preferences daemon
+    killall cfprefsd
 }
 
 main() {
     installOrUpdateHomebrew
-    textEditSettings
-    systemSettings
-    copyFiles
+    defaultEdits
 }
 
 main

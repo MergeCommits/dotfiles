@@ -10,6 +10,7 @@ cask "1password"
 cask "the-unarchiver"
 cask "notunes"
 cask "rectangle"
+cask "karabiner-elements"
 
 # borpaBusiness Apps
 cask "google-chrome"
