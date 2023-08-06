@@ -33,10 +33,13 @@ Add "x_layout"
 -  Click "All Input Sources"
 -  Disable "Show Input Menu in menu bar"
 
-Setup Dygma keyboard modifiers
+Setup Karabiner to only modify Dygma keyboard events
 
 -  Karabiner Elements -> Devices -> Raise (Dygma) -> Enable "Modify events"
 -  Apple Internal Keyboard -> Disable "Modify events"
+
+Setup Dygma keyboard modifiers
+
 -  System Preferences -> Keyboard -> Keyboard Shortcuts... -> Modifier Keys
 -  Swap assignment of Command and Control keys for both "Raise" and "Karabiner VirtualHIDKeyboard"
 
