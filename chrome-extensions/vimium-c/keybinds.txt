@@ -97,7 +97,7 @@ map > Marks.clearLocal
 # Scrolling
 map l scrollUp
 map u scrollToTop
-map h scrollToBottom
+map U scrollToBottom
 
 # Tabs
 shortcut userCustomized1 command="restoreTab"
@@ -116,6 +116,11 @@ map E Vomnibar.activateUrlInNewTab
 
 # Open bookmark
 map b Vomnibar.activateBookmarks
+map B Vomnibar.activateBookmarksInNewTab
+
+# Open history
+map h Vomnibar.activateHistory
+map H Vomnibar.activateHistoryInNewTab
 
 # Visual Mode
 mapkey <d:v> j
