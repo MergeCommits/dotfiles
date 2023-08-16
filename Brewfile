@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 # CLI
 brew "git"
 brew "pnpm"
+brew "firefoxpwa"
 
 # Apps
 cask "1password"
@@ -14,7 +15,7 @@ cask "rectangle"
 cask "karabiner-elements"
 
 # borpaBusiness Apps
-cask "google-chrome"
+cask "firefox"
 cask "visual-studio-code"
 cask "slack"
 cask "iterm2"

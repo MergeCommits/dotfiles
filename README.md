@@ -19,6 +19,11 @@ Install/update the dotfiles, macOS defaults, Homebrew and its packages:
 
     ./install
 
+Link app manifest for FireFox PWA extension:
+
+    sudo mkdir -p "/Library/Application Support/Mozilla/NativeMessagingHosts"
+    sudo ln -sf "/opt/homebrew/opt/firefoxpwa/share/firefoxpwa.json" "/Library/Application Support/Mozilla/NativeMessagingHosts/firefoxpwa.json"
+
 Copy "x_layout" to system folder, **requires restart**
 
     cp settings/keyboard/x_layout.keylayout ~/Library/Keyboard\ Layouts/x_layout.keylayout
