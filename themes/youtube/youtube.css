@@ -20,7 +20,15 @@ ytd-watch-metadata tp-yt-paper-tooltip {
     display: none !important; /* Trailing dot on homepage */
 }
 ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-video-meta-block {
-    display: none !important; /* Trailing dot in history */
+    display: none !important; /* Trailing dot in history and playlists */
+}
+
+/* View count in playlists */
+ytd-playlist-video-renderer ytd-video-meta-block yt-formatted-string#video-info span:nth-child(1) {
+    display: none !important;
+}
+ytd-playlist-video-renderer ytd-video-meta-block yt-formatted-string#video-info span:nth-child(2) {
+    margin: 0 4px !important; /* space between channel name and trailing dot */
 }
 
 /* View count on channel page */
