@@ -30,3 +30,10 @@ COLOR_GIT='%F{39}'
 NEWLINE=$'\n'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_DIR}%d ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF}%% '
+# pnpm
+export PNPM_HOME="/Users/markjarjour/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
