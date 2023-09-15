@@ -5,7 +5,6 @@ tap "homebrew/bundle"
 # CLI
 brew "git"
 brew "nvm"
-brew "npm"
 brew "firefoxpwa"
 
 # Apps
