@@ -5,7 +5,7 @@ Original idea.
 
 Install all available macOS updates:
 
-    softwareupdate -i -a
+    softwareupdate -ia
 
 Install Xcode Command Line Tools:
 
@@ -18,11 +18,6 @@ Clone the repository in your home directory:
 Install/update the dotfiles, macOS defaults, Homebrew and its packages:
 
     ./install
-
-Link app manifest for FireFox PWA extension:
-
-    sudo mkdir -p "/Library/Application Support/Mozilla/NativeMessagingHosts"
-    sudo ln -sf "/opt/homebrew/opt/firefoxpwa/share/firefoxpwa.json" "/Library/Application Support/Mozilla/NativeMessagingHosts/firefoxpwa.json"
 
 Copy "x_layout" to system folder, **requires restart**
 
