@@ -122,6 +122,9 @@ map B Vomnibar.activateBookmarksInNewTab
 map h Vomnibar.activateHistory
 map H Vomnibar.activateHistoryInNewTab
 
+# Copy page info
+map yt copyCurrentTitle
+
 # Visual Mode
 mapkey <d:v> j
 mapkey <e:v> k
