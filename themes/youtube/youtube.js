@@ -1,3 +1,4 @@
+'use strict';
 // Hides the "third recommended video" from the related videos section.
 // Just detects when there's a video with the "New" label that has less than 10K views.
 // Could be edge cases when watching low viewcount videos but it's good enough.
@@ -17,7 +18,7 @@ setInterval(function () {
     }
 
     const getVideoBadgeText = (element) => {
-        const badge = element.querySelector(".secondary-metadata > ytd-badge-supported-renderer .badge span");
+        const badge = element.querySelector(".secondary-metadata > ytd-badge-supported-renderer .badge p");
         if (!badge) {
             return false;
         }
@@ -54,31 +55,28 @@ setInterval(function () {
     array
         .forEach((element) => {
             const viewCount = getViewCount(element);
+            const videoBadgeText = getVideoBadgeText(element);
 
-            if (viewCount <= VIEW_COUNT_THRESHOLD) {
-                const videoBadgeText = getVideoBadgeText(element);
+            if (videoBadgeText === "new" && !isVideoHidden(element)) {
+                hideVideo(element);
+                element.setAttribute("data-view-count", viewCount);
 
-                if (videoBadgeText === "new" && !isVideoHidden(element)) {
-                    hideVideo(element);
-                    element.setAttribute("data-view-count", viewCount);
+                console.log(`New video found. Removing at ${viewCount} view(s).`);
+            } else if (videoBadgeText === "live" && !isVideoHidden(element)) {
+                hideVideo(element);
+                element.setAttribute("data-view-count", viewCount);
 
-                    console.log(`New video found. Removing at ${viewCount} view(s).`);
-                } else if (videoBadgeText === "live" && !isVideoHidden(element)) {
-                    hideVideo(element);
-                    element.setAttribute("data-view-count", viewCount);
-                    
-                    console.log(`Live video found. Removing at ${viewCount} view(s).`);
-                } else if (!videoWasChecked(element)) {
-                    if (videoBadgeText !== false) {
-                        console.log(`Video with badge text "${videoBadgeText}" found. Logging element and keeping.`)
-                        console.log(element);
-                    } else if (videoBadgeText === false) {
-                        console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
-                    }
-
-                    element.setAttribute("data-view-count", viewCount);
+                console.log(`Live video found. Removing at ${viewCount} view(s).`);
+            } else if (!videoWasChecked(element)) {
+                if (videoBadgeText !== false) {
+                    console.log(`Video with badge text "${videoBadgeText}" found. Logging element and keeping.`)
+                    console.log(element);
+                } else if (videoBadgeText === false) {
+                    console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
                 }
-            } else if (videoWasChecked(element) && isVideoHidden(element)) {
+
+                element.setAttribute("data-view-count", viewCount);
+            } else if (videoWasChecked(element) && isVideoHidden(element) && videoBadgeText !== "new" && videoBadgeText !== "live") {
                 unhideVideo(element);
                 console.log(`Video with ${viewCount} view(s) found. Unhiding.`);
             }
@@ -98,6 +96,6 @@ setInterval(function () {
     const collapsedDescriptionText = collapsedDescriptionElement.innerText.trim();
 
     if (!collapsedDescriptionText.includes(expandedDescriptionText)) {
-        collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionElement.innerText})`;
+        collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionText})`;
     }
 }, 1000);
