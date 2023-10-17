@@ -38,6 +38,27 @@ defaultEdits() {
 
     killall Finder
 
+    ### Dock
+
+    # Move dock to the right
+    defaults write com.apple.dock "orientation" -string "right"
+
+    # Disable launch animation
+    defaults write com.apple.dock "launchanim" -bool "false"
+
+    # Hide indicator for open applications
+    defaults write com.apple.dock "show-process-indicators" -bool "false"
+
+    # Hide recent apps
+    defaults write com.apple.dock "show-recents" -bool "false"
+
+    killall Dock
+
+    ### Widgets
+
+    # Widgets always display with full color
+    defaults write com.apple.widgets "widgetAppearance" -int 2
+
     ### TextEdit
     defaults write com.apple.TextEdit "SmartQuotes" -int 0
     
