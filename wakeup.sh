@@ -46,9 +46,6 @@ defaultEdits() {
     # Disable launch animation
     defaults write com.apple.dock "launchanim" -bool "false"
 
-    # Hide indicator for open applications
-    defaults write com.apple.dock "show-process-indicators" -bool "false"
-
     # Hide recent apps
     defaults write com.apple.dock "show-recents" -bool "false"
 
