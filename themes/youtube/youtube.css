@@ -3,36 +3,56 @@
     display: none;
 }
 
+/* Old view count display */
+#info-container #info>span:nth-child(1),
+/* space between view count and date */
+#info-container #info>span:nth-child(2) {
+    display: none;
+}
+
+#info-container #info>span:nth-child(3) {
+    white-space: nowrap;
+    /* prevent date uploaded line from wrapping */
+}
+
 /* View count tooltip */
 ytd-watch-metadata tp-yt-paper-tooltip {
-	display: none;
+    display: none;
 }
 
 /* View counts on homepage and in history */
 #metadata-line .ytd-video-meta-block:first-of-type {
     display: none !important;
 }
+
 #metadata-line .ytd-video-meta-block:nth-of-type(2)::before {
-    display: none !important; /* Trailing dot on homepage */
+    display: none !important;
+    /* Trailing dot on homepage */
 }
+
 ytd-video-meta-block:not(.grid):not(.compact).byline-separated #separator.ytd-video-meta-block {
-    display: none !important; /* Trailing dot in history and playlists */
+    display: none !important;
+    /* Trailing dot in history and playlists */
 }
 
 /* View count in playlists */
 ytd-playlist-video-renderer ytd-video-meta-block yt-formatted-string#video-info span:nth-child(1) {
     display: none !important;
 }
+
 ytd-playlist-video-renderer ytd-video-meta-block yt-formatted-string#video-info span:nth-child(2) {
-    margin: 0 4px !important; /* space between channel name and trailing dot */
+    margin: 0 4px !important;
+    /* space between channel name and trailing dot */
 }
 
 /* View count on channel page */
 #metadata-line .ytd-grid-video-renderer:first-of-type {
     display: none !important;
 }
+
 #metadata-line .ytd-grid-video-renderer:nth-of-type(2)::before {
-    display: none !important; /* Trailing dot */
+    display: none !important;
+    /* Trailing dot */
 }
 
 
@@ -49,20 +69,22 @@ ytd-playlist-video-renderer ytd-video-meta-block yt-formatted-string#video-info 
 
 /* Subscriber count in expanded description */
 ytd-video-description-infocards-section-renderer #subtitle {
-	display: none !important;
+    display: none !important;
 }
 
 /* Subscriber count in search results */
 
-#main-link #video-count 
+#main-link #video-count
+
 /* This appears to be an error. It used to be "Subscribers - Viewcount"
 	but now it's "Name - Subscribers" and the IDs were not updated. */
-{
-	display: none;
+    {
+    display: none;
 }
 
 #main-link #dot {
-	display: none; /* Trailing dot */
+    display: none;
+    /* Trailing dot */
 }
 
 
@@ -71,8 +93,9 @@ ytd-segmented-like-dislike-button-renderer {
     display: none !important;
 }
 
-#top-level-buttons-computed > ytd-button-renderer:nth-child(2) {
-    margin-left: 0; /* remove space next to share button */
+#top-level-buttons-computed>ytd-button-renderer:nth-child(2) {
+    margin-left: 0;
+    /* remove space next to share button */
 }
 
 
@@ -96,5 +119,5 @@ ytd-segmented-like-dislike-button-renderer {
 
 /* Fix content space overflowing horizontally when the page's width starts getting small. */
 html {
-	overflow-x: hidden !important;
+    overflow-x: hidden !important;
 }

@@ -4,15 +4,16 @@ tap "homebrew/bundle"
 # CLI
 brew "git"
 brew "nvm"
+brew "yq"
 
 # Apps
+cask "firefox"
 cask "1password"
 cask "the-unarchiver"
 cask "notunes"
 cask "rectangle"
 
 # borpaBusiness Apps
-cask "firefox"
 cask "visual-studio-code"
 cask "slack"
 cask "iterm2"

@@ -14,66 +14,49 @@ installOrUpdateHomebrew() {
     brew bundle
 }
 
-defaultEdits() {
-    ### Globals
-    defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
-    defaults write NSGlobalDomain "com.apple.swipescrolldirection" -bool "false"
-    defaults write NSGlobalDomain "NSAutomaticCapitalizationEnabled" -bool "false"
-    defaults write NSGlobalDomain "NSAutomaticDashSubstitutionEnabled" -bool "false"
-    defaults write NSGlobalDomain "NSAutomaticPeriodSubstitutionEnabled" -bool "false"
-    defaults write NSGlobalDomain "NSAutomaticQuoteSubstitutionEnabled" -bool "false"
-    defaults write NSGlobalDomain "NSAutomaticSpellingCorrectionEnabled" -bool "false"
+setMacOSDefaults() {
+    local defaultsFile="dots/defaults.yml"
+    local domains=($(yq eval 'keys | .[]' $defaultsFile))
+    local commands=()
 
-    ### Finder
-    defaults write com.apple.finder "ShowHardDrivesOnDesktop" -bool "false"
-    defaults write com.apple.finder "ShowPathbar" -bool "true"
-    defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
-    defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
-    
-    # When performing a search, search the current folder by default
-    defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+    for domain in $domains; do
+        local keys=($(yq eval ".\"$domain\" | keys | .[]" $defaultsFile))
+ 
+        for key in $keys; do
+            local value=$(yq eval ".\"$domain\".\"$key\"" $defaultsFile)
+            local type="string"
 
-    # Use column view in all Finder windows by default
-    defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
+            if [[ "$value" == "true" || "$value" == "false" ]]; then
+                type="bool"
+            elif [[ "$value" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+                type="float"
+            fi
 
-    killall Finder
+            commands+=("defaults write $domain \"$key\" -$type \"$value\"")
+        done
+    done
 
-    ### Dock
+    if [[ "$1" == "--debug-defaults" ]]; then
+        printf '%s\n' "${commands[@]}"
+    else
+        for command in "${commands[@]}"; do
+            eval "$command"
+        done
 
-    # Move dock to the right
-    defaults write com.apple.dock "orientation" -string "right"
-
-    # Disable launch animation
-    defaults write com.apple.dock "launchanim" -bool "false"
-
-    # Hide recent apps
-    defaults write com.apple.dock "show-recents" -bool "false"
-
-    killall Dock
-
-    ### Widgets
-
-    # Widgets always display with full color
-    defaults write com.apple.widgets "widgetAppearance" -int 2
-
-    ### TextEdit
-    defaults write com.apple.TextEdit "SmartQuotes" -int 0
-    
-    # Open TextEdit with Plain Text mode
-    defaults write com.apple.TextEdit "RichText" -int 0
-
-    ### Keyboard
-
-    # Set Fn key to change the keyboard Input Source
-    defaults write com.apple.HIToolbox "AppleFnUsageType" -int 1
-
-    ### Restart preferences daemon
-    killall cfprefsd
+        killall Finder
+        killall Dock
+        killall cfprefsd
+    fi
 }
 
 main() {
-    installOrUpdateHomebrew
-    defaultEdits
+    if [[ "$1" == "--debug-defaults" ]]; then
+        echo "Debugging macOS defaults..."
+    else
+        installOrUpdateHomebrew
+        echo "Setting macOS defaults..."
+    fi
+    setMacOSDefaults $1
 }
 
-main
+main $1

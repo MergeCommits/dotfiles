@@ -1,0 +1,43 @@
+NSGlobalDomain:
+    AppleShowAllExtensions: true
+    com.apple.swipescrolldirection: false
+    NSAutomaticCapitalizationEnabled: false
+    NSAutomaticDashSubstitutionEnabled: false
+    NSAutomaticPeriodSubstitutionEnabled: false
+    NSAutomaticQuoteSubstitutionEnabled: false
+    NSAutomaticSpellingCorrectionEnabled: false
+
+com.apple.finder:
+    ShowHardDrivesOnDesktop: false
+    ShowPathbar: true
+    AppleShowAllFiles: true
+    FXEnableExtensionChangeWarning: false
+    # When performing a search, search the current folder by default
+    FXDefaultSearchScope: SCcf
+    # Use column view in all Finder windows by default
+    FXPreferredViewStyle: clmv
+    # Show breadcrumbs
+    ShowPathbar: true
+
+com.apple.dock:
+    orientation: right
+    launchanim: false
+    show-recents: false
+    autohide: true
+    autohide-delay: 0
+    # Do not reorder Spaces based on most recent use
+    mru-spaces: false
+
+com.apple.widgets:
+    # Widgets always display with full color
+    widgetAppearance: 1
+
+com.apple.TextEdit:
+    # Disable fancy quotes conversion
+    SmartQuotes: 0
+    # Open TextEdit with Plain Text mode
+    RichText: 0
+
+com.apple.HIToolbox:
+    # Set Globe key to change the keyboard Input Source
+    AppleFnUsageType: 1
