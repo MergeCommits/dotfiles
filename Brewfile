@@ -11,7 +11,6 @@ cask "firefox"
 cask "1password"
 cask "the-unarchiver"
 cask "notunes"
-cask "rectangle"
 
 # borpaBusiness Apps
 cask "visual-studio-code"
