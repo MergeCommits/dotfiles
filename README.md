@@ -21,6 +21,6 @@ Install/update the dotfiles, macOS defaults, Homebrew and its packages:
 
 ## Other commands
 
-Run settings diff checker (does not work in home directory, copy `extern-tools/apple-plist-differ.sh` to folder on Desktop):
+Run settings diff checker:
 
-    sh apple-plist-differ.sh
+    sh extern-tools/apple-plist-differ.sh

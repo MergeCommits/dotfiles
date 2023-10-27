@@ -23,16 +23,34 @@ setMacOSDefaults() {
         local keys=($(yq eval ".\"$domain\" | keys | .[]" $defaultsFile))
  
         for key in $keys; do
-            local value=$(yq eval ".\"$domain\".\"$key\"" $defaultsFile)
-            local type="string"
+            local typeOfValue=$(yq eval ".\"$domain\".\"$key\" | type" "$defaultsFile")
+            local valueAsString=$(yq eval ".\"$domain\".\"$key\"" "$defaultsFile")
 
-            if [[ "$value" == "true" || "$value" == "false" ]]; then
-                type="bool"
-            elif [[ "$value" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-                type="float"
+            if [[ "$typeOfValue" == "!!str" ]]; then
+                commands+=("defaults write $domain \"$key\" -string \"$valueAsString\"")
+
+            elif [[ "$typeOfValue" == "!!int" ]]; then
+                commands+=("defaults write $domain \"$key\" -int \"$valueAsString\"")
+
+            elif [[ "$typeOfValue" == "!!float" ]]; then
+                commands+=("defaults write $domain \"$key\" -float \"$valueAsString\"")
+
+            elif [[ "$typeOfValue" == "!!bool" ]]; then
+                commands+=("defaults write $domain \"$key\" -bool \"$valueAsString\"")
+
+            elif [[ "$typeOfValue" == "!!map" ]]; then
+                local subkeys=($(yq eval ".\"$domain\".\"$key\" | keys | .[]" "$defaultsFile"))
+                local subkey_values=()
+
+                for subkey in "${subkeys[@]}"; do
+                    local subkey_value=$(yq eval ".\"$domain\".\"$key\".\"$subkey\"" "$defaultsFile")
+                    subkey_values+=("$subkey" "$subkey_value")
+                done
+
+                local subkey_str=$(printf '"%s" "%s" ' "${subkey_values[@]}")
+
+                commands+=("defaults write $domain \"$key\" -dict-add $subkey_str")
             fi
-
-            commands+=("defaults write $domain \"$key\" -$type \"$value\"")
         done
     done
 

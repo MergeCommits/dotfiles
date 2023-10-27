@@ -6,15 +6,18 @@ NSGlobalDomain:
     NSAutomaticPeriodSubstitutionEnabled: false
     NSAutomaticQuoteSubstitutionEnabled: false
     NSAutomaticSpellingCorrectionEnabled: false
+    # Set first day of the week to be Monday
+    AppleFirstWeekday:
+        gregorian: 2
 
 com.apple.finder:
     ShowHardDrivesOnDesktop: false
     ShowPathbar: true
     AppleShowAllFiles: true
     FXEnableExtensionChangeWarning: false
-    # When performing a search, search the current folder by default
+    # When performing a search, search the current folder
     FXDefaultSearchScope: SCcf
-    # Use column view in all Finder windows by default
+    # Use column view in all windows
     FXPreferredViewStyle: clmv
     # Show breadcrumbs
     ShowPathbar: true
