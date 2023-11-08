@@ -3,9 +3,9 @@ Original idea.
 
 ## Commands
 
-Install all available macOS updates:
+Install all available macOS updates and restart:
 
-    softwareupdate -ia
+    softwareupdate -iaR
 
 Install Xcode Command Line Tools:
 
