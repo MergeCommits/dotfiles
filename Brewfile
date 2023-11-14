@@ -5,7 +5,6 @@ tap "homebrew/bundle"
 brew "git"
 brew "nvm"
 brew "yq"
-brew "dotnet@6"
 
 # Apps
 cask "firefox"

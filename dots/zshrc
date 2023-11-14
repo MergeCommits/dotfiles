@@ -7,6 +7,9 @@ if [ -f '/Users/markjarjour/Downloads/google-cloud-sdk/completion.zsh.inc' ]; th
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# Add .NET Core SDK tools
+export PATH="$PATH:/Users/markjarjour/.dotnet/tools"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
