@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 brew "git"
 brew "nvm"
 brew "yq"
+brew "dotnet@6"
 
 # Apps
 cask "firefox"
@@ -16,6 +17,8 @@ cask "notunes"
 cask "visual-studio-code"
 cask "slack"
 cask "iterm2"
+cask "godot-mono"
+cask "rider"
 
 # Mac App Store Apps
 brew "mas"
