@@ -23,3 +23,4 @@ cask "rider"
 brew "mas"
 
 mas "Things 3", id: 904280696
+mas "Actions", id: 1586435171
