@@ -1,0 +1,3 @@
+[misc]
+pre_sudo = true
+disable = ["node", "pnpm"]

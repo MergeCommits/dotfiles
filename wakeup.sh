@@ -6,9 +6,6 @@ installOrUpdateHomebrew() {
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        brew update
-        brew upgrade
     fi
     
     brew bundle

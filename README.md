@@ -19,6 +19,10 @@ Install/update the dotfiles, macOS defaults, Homebrew and its packages:
 
     ./install
 
+Update everything
+
+    topgrade
+
 ## Other commands
 
 Run settings diff checker:

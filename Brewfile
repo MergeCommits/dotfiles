@@ -4,13 +4,16 @@ tap "homebrew/bundle"
 # CLI
 brew "git"
 brew "nvm"
+brew "pnpm"
 brew "yq"
+brew "topgrade"
 
 # Apps
 cask "firefox"
 cask "1password"
 cask "the-unarchiver"
 cask "notunes"
+cask "sony-ps-remote-play"
 
 # borpaBusiness Apps
 cask "visual-studio-code"
