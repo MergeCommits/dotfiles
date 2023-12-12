@@ -89,7 +89,7 @@ ytd-video-description-infocards-section-renderer #subtitle {
 
 
 /* Like/Dislike buttons */
-ytd-segmented-like-dislike-button-renderer {
+segmented-like-dislike-button-view-model {
     display: none !important;
 }
 
