@@ -27,3 +27,8 @@ brew "mas"
 
 mas "Things 3", id: 904280696
 mas "Actions", id: 1586435171
+mas "Play: Save Videos Watch Later", id: 1596506190
+
+# Safari Extensions
+mas "Tampermonkey", id: 1482490089
+mas "Cascadea", id: 1432182561
