@@ -14,6 +14,8 @@ cask "1password"
 cask "the-unarchiver"
 cask "notunes"
 cask "sony-ps-remote-play"
+cask "megasync"
+cask "obsidian"
 
 # borpaBusiness Apps
 cask "visual-studio-code"
