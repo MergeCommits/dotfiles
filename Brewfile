@@ -10,7 +10,9 @@ brew "topgrade"
 
 # Apps
 cask "firefox"
+cask "alfred"
 cask "1password"
+cask "1password-cli"
 cask "the-unarchiver"
 cask "notunes"
 cask "sony-ps-remote-play"
