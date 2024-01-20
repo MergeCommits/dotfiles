@@ -12,7 +12,6 @@ brew "topgrade"
 cask "firefox"
 cask "alfred"
 cask "1password"
-cask "1password-cli" # Needed for 1Password integration with Alfred
 cask "the-unarchiver"
 cask "sony-ps-remote-play"
 cask "megasync"
