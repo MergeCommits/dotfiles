@@ -12,10 +12,12 @@ brew "topgrade"
 cask "firefox"
 cask "alfred"
 cask "1password"
+cask "1password-cli"
 cask "the-unarchiver"
 cask "sony-ps-remote-play"
 cask "megasync"
 cask "obsidian"
+cask "cleanmymac"
 
 # borpaBusiness Apps
 cask "visual-studio-code"
