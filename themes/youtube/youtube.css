@@ -88,6 +88,7 @@ ytd-video-description-infocards-section-renderer #subtitle {
 }
 
 
+
 /* Like/Dislike buttons */
 segmented-like-dislike-button-view-model {
     display: none !important;
@@ -96,6 +97,13 @@ segmented-like-dislike-button-view-model {
 #top-level-buttons-computed>ytd-button-renderer:nth-child(2) {
     margin-left: 0;
     /* remove space next to share button */
+}
+
+
+
+/* Play next button */
+.ytp-left-controls .ytp-next-button {
+	display: none;
 }
 
 
