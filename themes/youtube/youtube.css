@@ -108,6 +108,12 @@ segmented-like-dislike-button-view-model {
 
 
 
+.videowall-endscreen {
+    display: none;
+}
+
+
+
 /* Comments section */
 #comments {
     display: none;
