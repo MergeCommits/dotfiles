@@ -29,9 +29,9 @@ cask "rider"
 # Mac App Store Apps
 brew "mas"
 
-mas "Things 3", id: 904280696
 mas "Actions", id: 1586435171
 mas "Play: Save Videos Watch Later", id: 1596506190
+mas "Lose It!", id: 297368629
 
 # Safari Extensions
 mas "Tampermonkey", id: 1482490089
