@@ -31,7 +31,7 @@ brew "mas"
 
 mas "Actions", id: 1586435171
 mas "Play: Save Videos Watch Later", id: 1596506190
-mas "Lose It!", id: 297368629
+mas "FoodNoms", id: 1479461686
 
 # Safari Extensions
 mas "Tampermonkey", id: 1482490089
