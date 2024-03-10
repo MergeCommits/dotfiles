@@ -5,6 +5,12 @@
     display: none;
 }
 
+/* Rolling view count */
+ytd-watch-info-text #view-count {
+    display: none !important;
+}
+
+
 /* View count tooltip */
 ytd-watch-metadata tp-yt-paper-tooltip {
     display: none;
