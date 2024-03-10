@@ -1,18 +1,8 @@
 /* View count below main video */
-#description #info-container #view-count {
-    display: none;
-}
-
-/* Old view count display */
 #info-container #info>span:nth-child(1),
 /* space between view count and date */
 #info-container #info>span:nth-child(2) {
     display: none;
-}
-
-#info-container #info>span:nth-child(3) {
-    white-space: nowrap;
-    /* prevent date uploaded line from wrapping */
 }
 
 /* View count tooltip */
@@ -127,6 +117,10 @@ segmented-like-dislike-button-view-model {
 
 /* Live chat */
 #chat {
+    display: none;
+}
+/* The space left by the chat window in theatre mode */
+ytd-watch-flexy #full-bleed-container #panels-full-bleed-container {
     display: none;
 }
 
