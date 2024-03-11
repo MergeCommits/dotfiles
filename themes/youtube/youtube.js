@@ -1,9 +1,8 @@
 'use strict';
 // Hides the "third recommended video" from the related videos section.
-// Just detects when there's a video with the "New" label that has less than 10K views.
-// Could be edge cases when watching low viewcount videos but it's good enough.
+// Just detects when there's a video with the "New" label and hides it.
 // NOTE: This also removes livestreams.
-setInterval(function () {
+const hideThirdRecommendedVideo = () => {
     const hideVideo = (element) => {
         element.style.display = "none";
     }
@@ -54,37 +53,37 @@ setInterval(function () {
 
     array
         .forEach((element) => {
-            const viewCount = getViewCount(element);
-            const videoBadgeText = getVideoBadgeText(element);
+        const viewCount = getViewCount(element);
+        const videoBadgeText = getVideoBadgeText(element);
 
-            if (videoBadgeText === "new" && !isVideoHidden(element)) {
-                hideVideo(element);
-                element.setAttribute("data-view-count", viewCount);
+        if (videoBadgeText === "new" && !isVideoHidden(element)) {
+            hideVideo(element);
+            element.setAttribute("data-view-count", viewCount);
 
-                console.log(`New video found. Removing at ${viewCount} view(s).`);
-            } else if (videoBadgeText === "live" && !isVideoHidden(element)) {
-                hideVideo(element);
-                element.setAttribute("data-view-count", viewCount);
+            console.log(`New video found. Removing at ${viewCount} view(s).`);
+        } else if (videoBadgeText === "live" && !isVideoHidden(element)) {
+            hideVideo(element);
+            element.setAttribute("data-view-count", viewCount);
 
-                console.log(`Live video found. Removing at ${viewCount} view(s).`);
-            } else if (!videoWasChecked(element)) {
-                if (videoBadgeText !== false) {
-                    console.log(`Video with badge text "${videoBadgeText}" found. Logging element and keeping.`)
-                    console.log(element);
-                } else if (videoBadgeText === false) {
-                    console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
-                }
-
-                element.setAttribute("data-view-count", viewCount);
-            } else if (videoWasChecked(element) && isVideoHidden(element) && videoBadgeText !== "new" && videoBadgeText !== "live") {
-                unhideVideo(element);
-                console.log(`Video with ${viewCount} view(s) found. Unhiding.`);
+            console.log(`Live video found. Removing at ${viewCount} view(s).`);
+        } else if (!videoWasChecked(element)) {
+            if (videoBadgeText !== false) {
+                console.log(`Video with badge text "${videoBadgeText}" found. Logging element and keeping.`)
+                console.log(element);
+            } else if (videoBadgeText === false) {
+                console.log(`Video with no badge text found. Keeping at ${viewCount} view(s).`);
             }
-        });
-}, 1000);
+
+            element.setAttribute("data-view-count", viewCount);
+        } else if (videoWasChecked(element) && isVideoHidden(element) && videoBadgeText !== "new" && videoBadgeText !== "live") {
+            unhideVideo(element);
+            console.log(`Video with ${viewCount} view(s) found. Unhiding.`);
+        }
+    });
+};
 
 // Replace "X years ago" upload date with the actual date.
-setInterval(function () {
+const replaceUploadDate = () => {
     const expandedDescriptionElement = document.querySelector("#info-strings > :nth-child(2)");
     const expandedDescriptionText = expandedDescriptionElement.innerText.trim();
 
@@ -98,4 +97,53 @@ setInterval(function () {
     if (!collapsedDescriptionText.includes(expandedDescriptionText)) {
         collapsedDescriptionElement.innerHTML = `${expandedDescriptionText} (${collapsedDescriptionText})`;
     }
-}, 1000);
+};
+
+const hideViewCounts = () => {
+    const viewCountRegex = /(\d{1,3}(,\d{3})*|\d+)(\.\d+)?(M|K)? views/g;
+    const allTextNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const textNodes = [];
+    let currentNode;
+
+    while (currentNode = allTextNodes.nextNode()) {
+        textNodes.push(currentNode);
+    }
+
+    textNodes
+        .filter((node) => {
+            return viewCountRegex.test(node.nodeValue);
+        })
+        .forEach((node) => {
+            node.parentNode.style.display = 'none';
+        });
+}
+
+const hideSubscriberCount = () => {
+    const subscriberCountRegex = /(\d{1,3}(,\d{3})*|\d+)(\.\d+)?(M|K)? subscribers/g;
+    const allTextNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    const textNodes = [];
+    let currentNode;
+
+    while (currentNode = allTextNodes.nextNode()) {
+        textNodes.push(currentNode);
+    }
+
+    textNodes
+        .filter((node) => {
+            return subscriberCountRegex.test(node.nodeValue);
+        })
+        .forEach((node) => {
+            node.parentNode.style.display = 'none';
+        });
+}
+
+const targetNode = document.querySelector("ytd-page-manager");
+const callback = () => {
+    hideViewCounts();
+    hideSubscriberCount();
+    hideThirdRecommendedVideo();
+    replaceUploadDate();
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(targetNode, { childList: true, subtree: true });
