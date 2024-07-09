@@ -15,16 +15,16 @@ Clone the repository in your home directory:
 
     git clone https://github.com/MergeCommits/dotfiles.git
 
-Install/update the dotfiles, macOS defaults, Homebrew and its packages:
+Install/update the dotfiles:
 
     ./install
+
+Install [homebrew](https://brew.sh/)
+
+Install topgrade:
+    
+    brew install topgrade
 
 Update everything
 
     topgrade
-
-## Other commands
-
-Run settings diff checker:
-
-    sh extern-tools/apple-plist-differ.sh
