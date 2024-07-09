@@ -1,0 +1,39 @@
+unmapAll
+
+map h scrollDown
+map t scrollUp
+map d scrollLeft
+map n scrollRight
+map ii scrollToTop
+map I scrollToBottom
+
+map u LinkHints.activate
+map U LinkHints.activateOpenInNewTab
+map fu LinkHints.activateCopyLinkUrl
+map ff LinkHints.activateHover
+map fv LinkHints.activateSelect
+map j LinkHints.unhoverLast
+
+map ig goUp
+map iG goToRoot
+map yy copyCurrentUrl
+map w toggleMuteTab
+
+map ic focusInput
+map c enterInsertMode
+map z enterFindMode
+map Z showHelp
+map m performFind
+map M performBackwardsFind
+
+map v enterVisualMode
+map V enterVisualLineMode
+mapkey <t:v> j # down
+mapkey <c:v> k # up
+mapkey <h:v> h # left
+mapkey <n:v> l # right
+mapkey <r:v> W # word right
+mapkey <g:v> b # word left
+mapkey <s:v> $ # end
+mapkey <l:v> 0 # home
+mapKey <j:v> c # caret mode

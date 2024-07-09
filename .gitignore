@@ -1,4 +1,0 @@
-Brewfile.lock.json
-
-# Alfred preference file that contains all the custom searches (including the Kagi session token)
-dots/alfred-preferences/Alfred.alfredpreferences/preferences/features/websearch/prefs.plist
